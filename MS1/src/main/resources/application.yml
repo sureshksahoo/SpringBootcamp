@@ -1,0 +1,42 @@
+logging:
+  level:
+    org:
+      springframework:
+        web: trace
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+server:
+  port: 8080
+spring:
+  application:
+    name: ms1
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:currencyconversiondb
+    username: sa
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    
+googleLink: google link
+message: dev
+---
+spring:
+  profiles: dev
+  
+message: dev profile
+
+---
+
+spring:
+  profiles: prod
+  
+message: prod profile

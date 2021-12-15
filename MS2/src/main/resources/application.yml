@@ -1,0 +1,31 @@
+logging:
+  level:
+    org:
+      springframework:
+        web: trace
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+server:
+  port: 8080
+spring:
+  application:
+    name: ms2
+  
+    
+url: http://localhost:9000/currencyconversion/
+message: dev
+---
+spring:
+  profiles: dev
+  
+message: dev profile
+
+---
+
+spring:
+  profiles: prod
+  
+message: prod profile
